@@ -1,6 +1,6 @@
 function NotFound() {
     return (
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center mt-8">
             <img src="assets/not-found.png" className="w-72" />
             <p className="text-2xl">City not found</p>
         </div>

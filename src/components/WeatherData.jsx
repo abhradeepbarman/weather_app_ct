@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
 function WeatherData({ data }) {
@@ -29,7 +30,7 @@ function WeatherData({ data }) {
 
     return (
         <div className="flex flex-col items-center text-center">
-            <div className="flex items-center gap-2 mt-4">
+            <div className="flex items-center gap-2 mt-8">
                 <p className="text-2xl font-semibold">{weatherInfo.name}</p>
                 <img
                     className="w-6 h-6"
@@ -44,7 +45,7 @@ function WeatherData({ data }) {
             <p className="text-4xl font-bold">{weatherInfo.temp}</p>
 
             {/* Cards section  */}
-            <div className="flex gap-4 mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
                 <div className="flex flex-col items-center bg-white bg-opacity-20 px-6 py-4 rounded-xl">
                     <img src="assets/wind.png" className="w-20 h-20" />
                     <p className="text-xl font-semibold">Windspeed</p>

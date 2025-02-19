@@ -24,22 +24,23 @@ function SearchWeather() {
             const { data } = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${config.WEATHER_API_KEY}`
             );
-            setLoading(false);
             setWeatherData(data);
         } catch (error) {
             if (error instanceof AxiosError) {
                 if (error?.status === 404) {
-                    setLoading(false);
                     setNotFound(true);
                 }
             }
             console.log(error);
         }
+        finally {
+            setLoading(false);
+        }
     };
 
     return (
         <div className="mt-10 flex flex-col items-center">
-            {/* input section  */}
+            {/* search city section  */}
             <form
                 onSubmit={handleSearch}
                 className="flex items-center w-full max-w-xl mt-6"
